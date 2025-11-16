@@ -3,6 +3,8 @@ export interface ChatAnswer {
   imagePlaceholder?: boolean;
   content: string[];
   mapLocation?: string;
+  isTable?: boolean;
+  isLink?: boolean;
 }
 
 export interface ChatQuestion {
@@ -28,7 +30,7 @@ export const chatQuestions: ChatQuestion[] = [
   {
     id: "time",
     icon: "⏰",
-    label: "장소",
+    label: "행사시간",
     question: "행사 시간이 어떻게 되나요?",
     answer: {
       title: "⏰ 행사 시간",
@@ -42,7 +44,7 @@ export const chatQuestions: ChatQuestion[] = [
   {
     id: "location",
     icon: "⛳",
-    label: "드레스코드",
+    label: "행사장소",
     question: "행사 장소가 어디인가요?",
     answer: {
       title: "⛳ 행사 장소",
@@ -71,7 +73,7 @@ export const chatQuestions: ChatQuestion[] = [
   {
     id: "dresscode",
     icon: "👕",
-    label: "종목",
+    label: "드레스코드",
     question: "드레스코드가 어떻게 되나요?",
     answer: {
       title: "👕 드레스코드",
@@ -108,25 +110,15 @@ export const chatQuestions: ChatQuestion[] = [
     answer: {
       title: "📋 행사 타임테이블",
       imagePlaceholder: true,
+      isTable: true,
       content: [
-        "10:00 ~ 10:30 | 등원 및 자리 정돈, 명찰 부착",
-        "",
-        "10:30 ~ 10:50 | 개회식 및 준비운동",
-        "",
-        "10:50 ~ 11:20 | 1부. 몸풀기 및 협동",
-        "• 만 3세: 공 운반",
-        "• 만 4세: 친구야, 같이 가자",
-        "• 만 5세: O, X 퀴즈",
-        "",
-        "11:20 ~ 11:50 | 2부. 유아 개인 및 단체",
-        "• 계주(4인 1조)",
-        "",
-        "11:50 ~ 12:30 | 3부. 가족참여 활동",
-        "• 줄다리기, 신발 던지기, 가족 응원",
-        "",
-        "12:30 ~ 12:50 | 4부. 마무리 및 시상",
-        "",
-        "12:50 ~ 13:00 | 폐회식 및 귀가 지도"
+        "10:00~10:30|등원 및 자리 정돈, 명찰 부착",
+        "10:30~10:50|개회식 및 준비운동",
+        "10:50~11:20|1부. 몸풀기 및 협동\n• 만 3세: 공 운반\n• 만 4세: 친구야, 같이 가자\n• 만 5세: O, X 퀴즈",
+        "11:20~11:50|2부. 유아 개인 및 단체\n• 계주(4인 1조)",
+        "11:50~12:30|3부. 가족참여 활동\n• 줄다리기, 신발 던지기, 가족 응원",
+        "12:30~12:50|4부. 마무리 및 시상",
+        "12:50~13:00|폐회식 및 귀가 지도"
       ]
     }
   },
@@ -138,10 +130,11 @@ export const chatQuestions: ChatQuestion[] = [
     answer: {
       title: "⚠ 추가 문의",
       imagePlaceholder: true,
+      isLink: true,
       content: [
         "추가로 궁금한 사항은 다른 가족들도 궁금할 수 있으니 함께 공유해주세요!",
         "",
-        "🔗 https://docs.google.com/forms/d/e/1FAIpQLSe2aQaef6s_yYCTNngh8FFxn8a7LtH7Vzw54FlRjUAkz7IJag/viewform"
+        "https://docs.google.com/forms/d/e/1FAIpQLSe2aQaef6s_yYCTNngh8FFxn8a7LtH7Vzw54FlRjUAkz7IJag/viewform"
       ]
     }
   }

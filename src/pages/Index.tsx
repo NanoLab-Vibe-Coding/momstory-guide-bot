@@ -47,7 +47,7 @@ const Index = () => {
       textContent: question.question
     };
 
-    // Prepare answer text for speech
+    // Prepare answer text for speech (content only, no title or emoji)
     const answerTextContent = question.answer.content.join(" ");
 
     // Add bot answer
@@ -59,6 +59,9 @@ const Index = () => {
           title={question.answer.title}
           imagePlaceholder={question.answer.imagePlaceholder}
           mapLocation={question.answer.mapLocation}
+          isTable={question.answer.isTable}
+          isLink={question.answer.isLink}
+          rawContent={question.answer.content}
           content={
             <div className="space-y-1">
               {question.answer.content.map((line, idx) => (
@@ -70,7 +73,7 @@ const Index = () => {
           }
         />
       ),
-      textContent: question.answer.title + ". " + answerTextContent
+      textContent: answerTextContent
     };
 
     setMessages(prev => [...prev, userMessage, botMessage]);
@@ -89,8 +92,8 @@ const Index = () => {
       <header className="sticky top-0 z-10 bg-card border-b border-border shadow-sm">
         <div className="max-w-2xl mx-auto px-4 py-4">
           <div className="text-center space-y-1">
-            <p className="text-sm text-muted-foreground font-medium">건국유치원</p>
-            <h1 className="text-2xl font-bold text-foreground">Mom'story</h1>
+            <p className="text-2xl text-muted-foreground font-medium">건국유치원</p>
+            <h1 className="text-5xl font-bold text-foreground">Mom'story</h1>
           </div>
         </div>
       </header>
@@ -111,7 +114,7 @@ const Index = () => {
       </main>
 
       {/* Action Buttons */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background to-transparent pt-4 pb-6 px-4 border-t border-border">
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background to-transparent pt-4 pb-6 px-4">
         <div className="max-w-2xl mx-auto">
           {/* Voice Control */}
           <div className="flex justify-end mb-3">

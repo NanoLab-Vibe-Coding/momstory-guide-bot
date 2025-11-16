@@ -16,8 +16,8 @@ export const ChatBubble = ({ type, children, className }: ChatBubbleProps) => {
     >
       <div
         className={cn(
-          "chat-bubble px-5 py-4",
-          type === "user" ? "chat-bubble-user" : "chat-bubble-bot",
+          "chat-bubble",
+          type === "user" ? "chat-bubble-user" : "chat-bubble-bot px-5 py-4",
           className
         )}
       >
