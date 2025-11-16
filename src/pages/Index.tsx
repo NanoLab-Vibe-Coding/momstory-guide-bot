@@ -61,10 +61,10 @@ const Index = () => {
         <AnswerContent
           title={question.answer.title}
           imageUrl={question.answer.imageUrl}
-          mapLocation={question.answer.mapLocation}
           isTable={question.answer.isTable}
           isLink={question.answer.isLink}
           rawContent={question.answer.content}
+          showMap={question.id === 'location'}
           content={
             <div className="space-y-1">
               {question.answer.content.map((line, idx) => (

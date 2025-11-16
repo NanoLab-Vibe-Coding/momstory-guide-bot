@@ -1,57 +1,52 @@
+import { useState } from "react";
+import BasicMap from "@/components/BasicMap";
+
 interface AnswerContentProps {
   title: string;
   imageUrl?: string;
   content: React.ReactNode;
-  mapLocation?: string;
   isTable?: boolean;
   isLink?: boolean;
   rawContent?: string[];
+  showMap?: boolean;
 }
 
 export const AnswerContent = ({ 
-  title, 
-  imageUrl, 
+  title,
+  imageUrl,
   content,
-  mapLocation,
   isTable,
   isLink,
-  rawContent
+  rawContent,
+  showMap
 }: AnswerContentProps) => {
+  const [imageOk, setImageOk] = useState(true);
+
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-bold text-primary flex items-center gap-2">
-        {title}
-      </h3>
-      
-      {imageUrl ? (
-        <div className="w-full aspect-video rounded-2xl overflow-hidden border border-border">
-          <img 
-            src={imageUrl} 
+      <h3 className="text-lg font-bold text-primary flex items-center gap-2">{title}</h3>
+
+      {showMap ? (
+        <div className="w-full rounded-2xl overflow-hidden border border-border">
+          <BasicMap />
+        </div>
+      ) : null}
+
+      {!showMap && !isLink && imageUrl && imageOk ? (
+        <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border">
+          <img
+            src={imageUrl}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
+            onError={() => setImageOk(false)}
           />
         </div>
-      ) : (
-        <div className="w-full aspect-video bg-muted/50 rounded-2xl flex items-center justify-center border-2 border-dashed border-border/50">
+      ) : !showMap && !isLink ? (
+        <div className="w-full aspect-[4/3] bg-muted/50 rounded-2xl flex items-center justify-center border-2 border-dashed border-border/50">
           <span className="text-muted-foreground text-sm">이미지 영역</span>
         </div>
-      )}
+      ) : null}
 
-      {mapLocation && (
-        <div className="w-full h-64 bg-muted rounded-2xl overflow-hidden border border-border">
-          <iframe
-            src={`https://map.kakao.com/link/map/${mapLocation},36.9736,127.9277`}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="호암체육관 위치"
-          />
-        </div>
-      )}
-      
       <div className="text-foreground leading-relaxed space-y-2">
         {isTable && rawContent ? (
           <div className="overflow-x-auto">
@@ -80,7 +75,7 @@ export const AnswerContent = ({
             {rawContent.map((line, idx) => {
               if (line.startsWith('http')) {
                 return (
-                  <a 
+                  <a
                     key={idx}
                     href={line}
                     target="_blank"
