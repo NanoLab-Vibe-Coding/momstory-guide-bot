@@ -127,6 +127,19 @@ export const chatQuestions: ChatQuestion[] = [
     }
   },
   {
+    id: "seating",
+    icon: "🪑",
+    label: "자리배치도",
+    question: "자리는 어떻게 배치되나요?",
+    answer: {
+      title: "🪑 자리배치도",
+      imageUrl: "/assets/seating.jpg",
+      content: [
+        "자리 배치도를 확인하시고 해당 위치로 이동해 주세요!"
+      ]
+    }
+  },
+  {
     id: "inquiry",
     icon: "⚠",
     label: "추가 문의",
