@@ -2,9 +2,6 @@ export interface ChatAnswer {
   title: string;
   imageUrl?: string;
   content: string[];
-  mapLocation?: string;
-  mapLat?: number;
-  mapLng?: number;
   isTable?: boolean;
   isLink?: boolean;
 }
@@ -50,9 +47,6 @@ export const chatQuestions: ChatQuestion[] = [
     question: "행사 장소가 어디인가요?",
     answer: {
       title: "⛳ 행사 장소",
-      mapLocation: "호암체육관",
-      mapLat: 36.9627427,
-      mapLng: 127.9269237,
       content: ["충주시 중원대로 3306 (호암동), 호암 체육관"]
     }
   },
