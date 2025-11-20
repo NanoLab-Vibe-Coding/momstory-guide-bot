@@ -65,7 +65,7 @@ export const chatQuestions: ChatQuestion[] = [
       title: "🎒 준비물",
       imageUrl: "/assets/supplies.jpg",
       content: [
-        "'돗자리 / 쓰레기봉투 / 간단한 간식 / 물 / 물티슈 또는 휴지' 등을 챙겨주세요."
+        "'돗자리, 쓰레기봉투, 간단한 간식, 물, 물티슈 또는 휴지' 등을 챙겨주세요."
       ]
     }
   },
