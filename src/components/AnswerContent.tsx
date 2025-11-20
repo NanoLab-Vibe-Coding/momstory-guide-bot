@@ -36,11 +36,11 @@ export const AnswerContent = ({
       ) : null}
 
       {!showMap && !isLink && imageUrl && imageOk ? (
-        <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-border">
+        <div className="w-full max-h-[500px] rounded-2xl overflow-hidden border border-border bg-muted/20 flex items-center justify-center">
           <img
             src={imageUrl}
             alt={title}
-            className="w-full h-full object-contain"
+            className="w-full h-auto object-contain"
             onError={() => setImageOk(false)}
           />
         </div>
