@@ -23,7 +23,7 @@ export const chatQuestions: ChatQuestion[] = [
     answer: {
       title: "🗓 행사 날짜",
       imageUrl: "/assets/event-date.jpg",
-      content: ["2025년 10월 18일(토)"]
+      content: ["행사 날짜는 '2025년 10월 18일(토)' 입니다."]
     }
   },
   {
@@ -35,8 +35,8 @@ export const chatQuestions: ChatQuestion[] = [
       title: "⏰ 행사 시간",
       imageUrl: "/assets/event-time.jpg",
       content: [
-        "10:00 ~ 13:00",
-        "원활한 진행을 위해 9:30까지 입장 부탁드려요!"
+        "당일 행사는 오전 10시부터 오후 1시까지 진행될 예정입니다.",
+        "원활한 진행을 위해 오전 9:30까지 입장 부탁드려요!"
       ]
     }
   },
@@ -47,7 +47,13 @@ export const chatQuestions: ChatQuestion[] = [
     question: "행사 장소가 어디인가요?",
     answer: {
       title: "⛳ 행사 장소",
-      content: ["충주시 중원대로 3306 (호암동), 호암 체육관"]
+      imageUrl: "/assets/event-place.jpg",
+      content: ["행사는 실내 체육관인 호암 체육관에서 진행됩니다. 구체적인 주소는 '충주시 중원대로 3306 (호암동), 호암 체육관' 입니다. 참고하시길 바랍니다.",
+        "",
+        "대중교통 이용시 참고하시기 바랍니다.",
+        "",
+        "버스 안내 : 100, 110, 120, 200, 200-1, 614 이용 후 '호암체육관' 정류장에서 하차하시면 됩니다."
+      ]
     }
   },
   {
@@ -59,12 +65,7 @@ export const chatQuestions: ChatQuestion[] = [
       title: "🎒 준비물",
       imageUrl: "/assets/supplies.jpg",
       content: [
-        "• 돗자리",
-        "• 쓰레기 비닐",
-        "• 간단한 간식",
-        "• 물",
-        "• 물티슈",
-        "• 휴지"
+        "'돗자리 / 쓰레기봉투 / 간단한 간식 / 물 / 물티슈 또는 휴지' 등을 챙겨주세요."
       ]
     }
   },
@@ -77,11 +78,11 @@ export const chatQuestions: ChatQuestion[] = [
       title: "👕 드레스코드",
       imageUrl: "/assets/dress-code.jpg",
       content: [
-        "👶 자녀: 유치원 체육복, 양말, 운동화",
+        "자녀는 '유치원 체육복, 양말, 운동화' 착용을 부탁드립니다.",
         "",
-        "👨‍👩‍👧 부모님: 흰색 상의, 편안한 바지, 운동화",
+        "가족분들은 '흰색 상의, 편안한 바지, 운동화' 착용을 권장합니다.",
         "",
-        "⚠️ 치마, 크록스, 샌들 등 절대 금지"
+        "치마, 크록스, 샌들 등은 위험할 수 있으니 피해주시면 감사드리겠습니다."
       ]
     }
   },
@@ -94,9 +95,11 @@ export const chatQuestions: ChatQuestion[] = [
       title: "🚗 주차 공간",
       imageUrl: "/assets/parking.jpg",
       content: [
-        "아이들과 가을 하늘도 보고, 즐거운 대화도 나누며 도보 이동 부탁드립니다!",
+        "체육관 자체에 50대 정도의 차량을 수용할 수 있는 주차공간이 마련되어있습니다. 차량을 가져오신 분들은 이용하시길 바랍니다.",
         "",
-        "체육관 자체 50대 주차 공간 확보"
+        "가급적이면, 아이들과 가을 하늘도 보고, 즐거운 대화도 나누는 도보 이동을 부탁드립니다.",
+        "",
+        "주차 자리가 부족할 경우, 호암지 북단 문화동에 있는 공용주차장 이용 바랍니다."
       ]
     }
   },
@@ -121,15 +124,15 @@ export const chatQuestions: ChatQuestion[] = [
     }
   },
   {
-    id: "seating",
+    id: "seats",
     icon: "🪑",
     label: "자리배치도",
-    question: "자리는 어떻게 배치되나요?",
+    question: "각 반 자리는 어디에 있나요?",
     answer: {
       title: "🪑 자리배치도",
-      imageUrl: "/assets/seating.jpg",
+      imageUrl: "/assets/seats.jpg",
       content: [
-        "자리 배치도를 확인하시고 해당 위치로 이동해 주세요!"
+        "자리 배치도를 참고해주세요."
       ]
     }
   },
@@ -137,13 +140,12 @@ export const chatQuestions: ChatQuestion[] = [
     id: "inquiry",
     icon: "⚠",
     label: "추가 문의",
-    question: "추가로 궁금한 사항이 있어요.",
+    question: "추가로 궁금한 사항이 있어요!",
     answer: {
       title: "⚠ 추가 문의",
-      imageUrl: "/assets/inquiry.jpg",
       isLink: true,
       content: [
-        "추가로 궁금한 사항은 다른 가족들도 궁금할 수 있으니 함께 공유해주세요!",
+        "추가로 궁금한 사항은 다른 가족들도 궁금할 수 있으니 아래 링크를 통해 함께 공유해주세요!",
         "",
         "https://docs.google.com/forms/d/e/1FAIpQLSe2aQaef6s_yYCTNngh8FFxn8a7LtH7Vzw54FlRjUAkz7IJag/viewform"
       ]
