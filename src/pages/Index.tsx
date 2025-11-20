@@ -81,9 +81,9 @@ const Index = () => {
 
     setMessages(prev => [...prev, userMessage, botMessage]);
 
-    // Speak the answer
+    // Speak the answer (except for link type answers)
     setTimeout(() => {
-      if (botMessage.textContent) {
+      if (botMessage.textContent && !question.answer.isLink) {
         speak(botMessage.textContent);
       }
     }, 500);
